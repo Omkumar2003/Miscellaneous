@@ -1,0 +1,22 @@
+### check main is updated
+git checkout main
+git pull origin main
+
+
+gh pr list
+git fetch origin pull/35/head:pr-35
+git checkout pr-35
+git rebase main 
+git checkout main 
+git merge pr-35 
+git diff main..pr-35  
+git add .
+
+
+### Fixes #33 → closes issue #33
+### Closes #35 → closes PR #35 if in same repo
+
+
+git commit -m "Fixes #33, closes #35"
+git push origin main
+git branch -d pr-35
